@@ -1,5 +1,5 @@
 #include <iostream>
-#include <weather_client.h>
+#include "weather_client.h"
 
 using namespace std;
 
@@ -25,7 +25,9 @@ int main()
     }
     else
     {
+        cout << endl;
         cout << response_for_Client_1 << endl;
+        cout << endl;
     }
     return 0;
 }

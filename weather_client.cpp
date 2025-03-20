@@ -1,4 +1,4 @@
-#include <weather_client.h>
+#include "weather_client.h"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ string WeatherClient ::getWeatherData(double latitude, double longitude)
         http::response<http::dynamic_body> res;
         http::read(socket, buffer, res);
 
-        cout << res << endl;
+        // cout << res << endl;
         beast::error_code ec;
         socket.shutdown(tcp::socket::shutdown_both, ec);
 
