@@ -18,9 +18,7 @@ int main()
         tcp::socket socket(ioc);
         auto const results = resolver.resolve("api.open-meteo.com", "80");
         net::connect(socket, results.begin(), results.end());
-http::request<http::string_body> req(http::verb::get,
-"/v1/forecast?latitude=52.400276&longitude=16.955308&current=temperature_2m,precipitation
-,weather_code,surface_pressure,wind_speed_10m", 11);
+http::request<http::string_body> req(http::verb::get,"/v1/forecast?latitude=52.400276&longitude=16.955308&current=temperature_2m,precipitation,weather_code,surface_pressure,wind_speed_10m", 11);
 req.set(http::field::host, "api.open-meteo.com");
 req.set(http::field::user_agent, BOOST_BEAST_VERSION_STRING);
 http::write(socket, req);
